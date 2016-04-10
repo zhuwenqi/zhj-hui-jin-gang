@@ -1,0 +1,210 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"InputUserCo",
+				"inputUserCoworkHandle"
+			],
+			[
+				"Data",
+				"Data"
+			],
+			[
+				"error",
+				"error_log"
+			],
+			[
+				"err",
+				"error_log"
+			],
+			[
+				"MSG_EVENT_",
+				"MSG_EVENT_CLICK"
+			],
+			[
+				"th",
+				"this"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Conf/config.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Model/CoworkJoinModel.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Controller/TesttpController.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Model/UserWorkModel.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/View/Testtp/testInputPage.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/View/Testtp/testInputTemplate.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Conf/config.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Model/CoworkModel.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/View/Cowork/myOpenCoworkDetail.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/View/Cowork/myOpenCoworkList.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Controller/CoworkController.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/zhjg.sublime-project",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/View/CoworkJoin/inputUserCowork.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Common/Conf/config.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/CoworkJoinController.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/joinedCowork.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testQueryWork.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testInputTemplate.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/TesttpController.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/UserWorkModel.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/CoworkController.class.php",
+		"/Users/zhuwenqi/快盘/主题/Faxsun相关/佛学app/参考/weui-master/dist/example/index.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/CoworkJoin/inputUserCowork.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/CoworkJoinModel.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/CoworkModel.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/noJoinedCowork.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/zhjg/Application/WeChatMenu.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/zhjg.sublime-project",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/myOpenCoworkDetail.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testOutput.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/myOpenCoworkList.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/BaseUserModel.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/zhjg/Application/testmenu.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/newCowork.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/editCoworkTemplate.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/CoworkJoin/myJoinCoworkList.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Common/function.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/testmenu.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/UserMsgModel.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testInputPage.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/WechatController.class.php",
+		"/Users/zhuwenqi/快盘/主题/Faxsun相关/佛学app/参考/weui-master/src/example/index.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/ConstTextModel.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/index.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testInputHandle.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/IndexController.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/WeChatMenu.php",
+		"/Users/zhuwenqi/快盘/我收到的共享文件/13916911513@163.com/部门共享/5专项工作/6 瑞安显示屏/ips/Application/Home/Controller/PublicController.class.php",
+		"/Users/zhuwenqi/快盘/主题/Faxsun相关/佛学app/weixin/menu.php",
+		"/Users/zhuwenqi/快盘/主题/Faxsun相关/佛学app/参考/weixin/wx_hongqiao.php",
+		"/Users/zhuwenqi/快盘/主题/Faxsun相关/佛学app/参考/weixin/menu - 20160219.php"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ap-zhihuijingang",
+			"addJoin"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 371.0,
+	"status_bar_visible": true
+}
