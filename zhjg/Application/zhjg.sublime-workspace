@@ -118,6 +118,30 @@
 				"buffer_size": 7869,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/WechatController.class.php",
+			"settings":
+			{
+				"buffer_size": 13676,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/IndexController.class.php",
+			"settings":
+			{
+				"buffer_size": 793,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Conf/config.php",
+			"settings":
+			{
+				"buffer_size": 1033,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -219,7 +243,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 13,
 			"sheets":
 			[
 				{
@@ -525,7 +549,89 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2681.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/WechatController.class.php",
+					"settings":
+					{
+						"buffer_size": 13676,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1670.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/IndexController.class.php",
+					"settings":
+					{
+						"buffer_size": 793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Conf/config.php",
+					"settings":
+					{
+						"buffer_size": 1033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 8,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
