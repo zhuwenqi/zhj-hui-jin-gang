@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>{$coworkName}</title>
+    <link rel="stylesheet" href="__PUBLIC__/style/weui.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/style/example.css"/>
+</head>
+
+<body ontouchstart>
+    <div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'>
+    <img src="__PUBLIC__/images/head.jpg" width='700'>
+    </div>
+    <div class="hd">
+        <h1 class="page_title">{$coworkName}</h1>
+    </div>
+    <div class="bd">
+        <div class="weui_cells_title">共修名</div>
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$coworkName}</p>
+                </div>
+            </div>
+        </div>
+        <div class="weui_cells_title">发起人</div>
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$openerName}</p>
+                </div>
+            </div>
+        </div>
+
+<form action="{:U('CoworkJoin/inputUserCowork')}" id="addJoinForm" method="post">
+        <div class="weui_cells_title">我的共修</div>
+        <div class="weui_cells weui_cells_form">
+            <input type="hidden" name="openid" value={$openid} />
+            <input type="hidden" name="coid" value={$coid} />
+            <input type="hidden" name="nickname" value={$nickname} />
+            <input type="hidden" name="coworkname" value={$coworkName} />
+        </div>
+        <div class="weui_btn_area">
+            <a type="submit" class="weui_btn weui_btn_primary" href="javascript:showToast()" value="添加" id="submit_button">输入我的共修功课</a>
+        </div>
+        <div id="toast" style="display: none;">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <i class="weui_icon_toast"></i>
+            <p class="weui_toast_content">完成加入</p>
+        </div>
+    </div>
+        </form>
+
+    <div class="weui_cells_title">共修的功课列表：</div>
+    <div class="weui_cells">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>咒名</p>                </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>目标数</p>                </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>总完成数</p>                </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>我的完成数</p>                </div>
+        </div>
+        <foreach name="res" item="val">
+        
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$val['workname']}</p>
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$val['targetnumber']}</p>
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$res2[$val['id']]}</p>
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$res_my[$val['id']]}</p>
+                </div>
+            </div>
+        
+        </foreach>
+    </div>
+
+    </div>
+<script>
+
+function showToast(){
+/*
+    var to=document.getElementById('toast');
+    to.style.display="";
+    setTimeout(function () {
+        to.style.display="none";
+    }, 100000);
+*/
+    document.getElementById("addJoinForm").submit();
+}
+
+</script>
+
+    <script type="text/javascript">
+    // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+
+    var oid="<?=$openid?>";
+    //alert(oid);
+    if(oid==null || oid==''){
+        //alert('null');
+        //var opened1 = window.open('about:blank', '_self');
+        //opened1.opener = null;
+        //opened1.close();
+        document.addEventListener('WeixinJSBridgeReady', function(){ WeixinJSBridge.call('closeWindow'); }, false);
+    }else{
+
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('about:blank', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    }
+</script>
+
+</body>
+</html>

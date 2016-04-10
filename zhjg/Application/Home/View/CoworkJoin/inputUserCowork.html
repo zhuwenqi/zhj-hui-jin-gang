@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WeUI</title>
+    <link rel="stylesheet" href="__PUBLIC__/style/weui.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/style/example.css"/>
+    <script src="__PUBLIC__/js/laydate/laydate.js"></script>
+</head>
+<body ontouchstart>
+    <div class="hd">
+        <h1 class="page_title">录入共修功课</h1>
+    </div>
+    <div class="bd">
+        <div class="weui_cells_title">共修名</div>
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$coname}</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <form action="{:U('CoworkJoin/inputUserCoworkHandle')}" id="addTemplateCoworkForm" method="post">
+        <div class="weui_cells_title">批量录入今日共修功课</div>
+        <div class="weui_cells weui_cells_form">
+
+<div class="weui_cells_title">输入模式</div>
+        <div class="weui_cells weui_cells_radio">
+            <label class="weui_cell weui_check_label" for="x11">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>逐次累加</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <input type="radio" class="weui_check" name="radio1" id="x11" value="m1">
+                    <span class="weui_icon_checked"></span>
+                </div>
+            </label>
+            <label class="weui_cell weui_check_label" for="x12">
+
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>总数更新</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <input type="radio" name="radio1" class="weui_check" id="x12" value="m2" checked="checked">
+                    <span class="weui_icon_checked"></span>
+                </div>
+            </label>
+        </div>
+
+        <div class="weui_cell">
+            <div class="weui_cell_hd"><label class="weui_label">日期</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input laydate-icon" onclick="laydate({festival: true})" type="text"  name="inputDate" value={$inputDate}>
+                </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+            <foreach name="res_template" item="val">
+        
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$val['workname']}</p>
+                </div>
+                <div class="weui_cell_bd weui_cell_warn">
+                    <input class="weui_input" type="number"  name="{$val['workname']}" pattern="[0-9]*" placeholder="0"/>
+                </div>
+            </div>
+        
+            </foreach>
+            <input type="hidden" name="openid" value={$openid} />
+            <input type="hidden" name="coid" value={$coid} />
+            <input type="hidden" name="nickname" value={$nickname} />
+            <input type="hidden" name="coworkname" value={$coworkName} />
+            <input type="hidden" name="username" value={$username} />
+        </div>
+        <div class="weui_btn_area">
+            <a type="submit" class="weui_btn weui_btn_primary" href="javascript:showToast()" value="添加" id="submit_button">批量录入</a>
+        </div>
+        <div id="toast" style="display: none;">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <i class="weui_icon_toast"></i>
+            <p class="weui_toast_content">完成添加</p>
+        </div>
+    </div>
+        </form>
+
+    <div class="weui_cells_title">今日已录入的功课：</div>
+    <div class="weui_cells">
+        <foreach name="res_today" item="val">
+        
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$val['workname']}</p>
+                </div>
+                <div class="weui_cell_ft">{$val['readnumber']}</div>
+            </div>
+        
+        </foreach>
+    </div>
+
+    </div> 
+<script>
+
+function showToast(){
+
+    var to=document.getElementById('toast');
+    to.style.display="";
+    setTimeout(function () {
+        to.style.display="none";
+    }, 100000);
+    document.getElementById("addTemplateCoworkForm").submit();
+}
+
+</script>
+
+</script>
+
+    <script type="text/javascript">
+    // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+
+    var oid="<?=$openid?>";
+    //alert(oid);
+    if(oid==null || oid==''){
+        //alert('null');
+        //var opened1 = window.open('about:blank', '_self');
+        //opened1.opener = null;
+        //opened1.close();
+        document.addEventListener('WeixinJSBridgeReady', function(){ WeixinJSBridge.call('closeWindow'); }, false);
+    }else{
+
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('about:blank', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    }
+</script>
+
+</body>
+</html>

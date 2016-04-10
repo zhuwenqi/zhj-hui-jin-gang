@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>智慧金刚</title>
+    <link rel="stylesheet" href="__PUBLIC__/style/weui.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/style/example.css"/>
+</head>
+
+<body ontouchstart>
+
+    <div class="hd">
+        <h1 class="page_title">我发起的共修</h1>
+    </div>
+
+
+    <div class="weui_cells_title">共修列表：</div>
+    <div class="weui_cells">
+        <foreach name="res" item="val">
+        
+            <a class="weui_cell" href="{$val['myopenurl']}">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$val['coname']}</p>
+                </div>
+            </a>
+        
+        </foreach>
+    </div>
+<script>
+
+function showToast(){
+
+    var to=document.getElementById('toast');
+    to.style.display="";
+    setTimeout(function () {
+        to.style.display="none";
+    }, 100000);
+    document.getElementById("addWorkForm").submit();
+}
+
+</script>
+
+    <script type="text/javascript">
+    // 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器
+
+    var oid="<?=$openid?>";
+    //alert(oid);
+    if(oid==null || oid==''){
+        //alert('null');
+        //var opened1 = window.open('about:blank', '_self');
+        //opened1.opener = null;
+        //opened1.close();
+        document.addEventListener('WeixinJSBridgeReady', function(){ WeixinJSBridge.call('closeWindow'); }, false);
+    }else{
+
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+            // 这里警告框会阻塞当前页面继续加载
+            alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');
+            // 以下代码是用javascript强行关闭当前页面
+            var opened = window.open('about:blank', '_self');
+            opened.opener = null;
+            opened.close();
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>查询历史功课</title>
+    <link rel="stylesheet" href="__PUBLIC__/style/weui.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/style/example.css"/>
+    <script src="__PUBLIC__/js/laydate/laydate.js"></script>
+</head>
+<body ontouchstart>
+    <div class="hd">
+        <h1 class="page_title">查询历史功课</h1>
+    </div>
+    <div class="bd">
+        <div class="weui_cells_title">昵称</div>
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$nickname}</p>
+                </div>
+            </div>
+        </div>
+        <form action="{:U('Testtp/testQueryHandle')}" id="addWorkForm" method="post">
+        <div class="weui_cells weui_cells_form">
+            <input type="hidden" name="openid" value={$openid} />
+            <input type="hidden" name="nickname" value={$nickname} />
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">日期</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input laydate-icon" onclick="laydate({festival: true})" type="text"  name="queryDate" value={$querydate}>
+                </div>
+            </div>
+
+        </div>
+        <div class="weui_btn_area">
+            <a type="submit" class="weui_btn weui_btn_primary" href="javascript:showToast()" value="添加" id="submit_button">查询</a>
+        </div>
+
+    </div>
+        </form>
+
+    <div class="weui_cells_title">已完成的功课：</div>
+    <div class="weui_cells">
+        <foreach name="res" item="val">
+        
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>{$val['workname']}</p>
+                </div>
+                <div class="weui_cell_ft">{$val['readnumber']}</div>
+            </div>
+        
+        </foreach>
+    </div>
+    
+    </div>
+<script>
+
+function showToast(){
+/*
+    var to=document.getElementById('toast');
+    to.style.display="";
+    setTimeout(function () {
+        to.style.display="none";
+    }, 100000);
+*/
+    document.getElementById("addWorkForm").submit();
+}
+
+</script>
+
+</body>
+</html>
