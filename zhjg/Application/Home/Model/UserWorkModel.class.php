@@ -116,7 +116,7 @@ class UserWorkModel extends Model
               $oldData=$this->where('OpenId="'.$openID.'" AND WorkName="'.trim($work).'" AND WorkDate="'.$inputDate.'"')->find();
 
               //error_log('in addwork:'.$mode);
-              if($number>0)
+              if($number>=0)
               {
                   if($oldData){//假如今天已经录入过
                       $Data["Id"]=$oldData["id"];
@@ -133,13 +133,14 @@ class UserWorkModel extends Model
                   {//今天未录入过
                   //echo "no find";
                       $this->add($Data);//无论是更新或者累加，都需要添加记录
-                      if($mode=="m1"){//如果今天未录入过，且为累加模式，则需要去检查并更新模版
+                      if($mode=="m1" && $number>0){//如果今天未录入过，且为累加模式，则需要去检查并更新模版
                           $this->addNewTemplate($Data);
                       }
                   }
-                  if($mode=="m2"){//更新模式
+                  if($mode=="m2" && $number>0){//更新模式
                       $this->updateTemplate($Data);
                   }
+                  $this->clearEmptyWork($openID);
               }
               else{
                   if($number<0){
@@ -272,22 +273,79 @@ class UserWorkModel extends Model
     }
 
     public function queryTodayWork($openID=null){
-        $queryWork = $this->where('OpenId="'.$openID.'" AND WorkDate="'.date('Y-m-d').'"')->select();
+        $queryWork = $this->where('OpenId="'.$openID.'" AND WorkDate="'.date('Y-m-d').'"')->order('WorkName')->select();
         //var_dump($queryWork);
         return $queryWork;
     }
 
     public function queryWorkTemplate($openID=null){
         $dao = D('userworktemplate');//这里必须输入完整的数据库表名;
-        $queryWork = $dao->where('OpenId="'.$openID.'"')->select();
+        $queryWork = $dao->where('OpenId="'.$openID.'"')->order('WorkName')->select();
         //var_dump($queryWork);
         return $queryWork;
     }
 
     public function queryWorkByDate($openID=null,$date=null){
-        $queryWork = $this->where('OpenId="'.$openID.'" AND WorkDate="'.$date.'"')->select();
+        $queryWork = $this->where('OpenId="'.$openID.'" AND WorkDate="'.$date.'"')->order('WorkName')->select();
         //var_dump($queryWork);
         return $queryWork;
+    }
+
+    public function querySumWorkByDate($openID=null,$dateStart=null,$dateEnd=null){
+        //$queryWork = $this->where('OpenId="'.$openID.'" AND WorkDate="'.$date.'"')->select();
+        //var_dump($queryWork);
+        
+        $queryWork=$this->query( 'select workname,sum(readnumber) as readnumber from userwork where openid="'.$openID.'" and workdate >="'.$dateStart.'" and workdate<="'.$dateEnd.'" group by workname order by workname'); 
+ 
+
+        return $queryWork;
+    }
+
+    public function outputWorkToFileTest($nickName=null,$openID=null,$startDate=null,$endDate=null)
+    {
+        $queryWork = $this->where('OpenId="'.$openID.'" AND WorkDate>="'.$startDate.'" AND WorkDate<="'.$endDate.'"')->order('WorkDate')->select();
+        $result = '';
+        //var_dump($queryWork);
+        $nickNameCode = iconv('utf-8','gb2312',$nickName);
+        foreach ($queryWork as $record) {
+          $workName = iconv('utf-8','gb2312',$record["workname"]);
+          $result = $result.$nickNameCode.','.$record["workdate"].','.$record["openid"].','.$workName.','.$record["readnumber"]."\n";//必须小写
+          //echo $record["workname"];
+        }
+
+        $filename = C('SAVE_FILE_PATH').$openID.date('Ymd').'.csv'; //设置文件名
+        //$filename = $openID.date('Ymd').'.csv'; //设置文件名
+        //echo $filename;
+        $myfile = fopen($filename, "w") or die("Unable to open file!");
+        fwrite($myfile, $result);
+        fclose($myfile);
+
+    }
+
+    public function outputWorkToMail($nickName=null,$openID=null,$startDate=null,$endDate=null,$email=null){
+        $queryWork = $this->where('OpenId="'.$openID.'" AND WorkDate>="'.$startDate.'" AND WorkDate<="'.$endDate.'"')->order('WorkDate')->select();
+        $result = '';
+        //var_dump($queryWork);
+        $nickNameCode = iconv('utf-8','gb2312',$nickName);
+        foreach ($queryWork as $record) {
+          $workName = iconv('utf-8','gb2312',$record["workname"]);
+          $result = $result.$nickNameCode.','.$record["workdate"].','.$record["openid"].','.$workName.','.$record["readnumber"]."\n";//必须小写
+          //echo $record["workname"];
+        }
+
+        $filename = C('SAVE_FILE_PATH').$openID.date('Ymd').'.csv'; //设置文件名
+        //$filename = $openID.date('Ymd').'.csv'; //设置文件名
+        //echo $filename;
+        $myfile = fopen($filename, "w") or die("Unable to open file!");
+        fwrite($myfile, $result);
+        fclose($myfile);
+
+        if(sendMail($email,'你好!邮件标题','这是一篇测试邮件正文！',$filename)){
+            echo '发送成功！';
+        }
+        else{
+            echo '发送失败！';
+        }
     }
 
 

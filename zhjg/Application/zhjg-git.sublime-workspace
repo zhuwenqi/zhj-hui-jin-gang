@@ -31,6 +31,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Home/Common/function.php",
+			"settings":
+			{
+				"buffer_size": 4460,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -56,47 +64,41 @@
 	},
 	"file_history":
 	[
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Conf/config.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Model/CoworkJoinModel.class.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Controller/TesttpController.class.php",
 		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Model/UserWorkModel.class.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/View/Testtp/testInputPage.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/View/Testtp/testInputTemplate.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Controller/TesttpController.class.php",
 		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Conf/config.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Model/CoworkModel.class.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/View/Cowork/myOpenCoworkDetail.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/View/Cowork/myOpenCoworkList.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/Controller/CoworkController.class.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/zhjg.sublime-project",
-		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/Home/View/CoworkJoin/inputUserCowork.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Common/Conf/config.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/CoworkJoinController.class.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/joinedCowork.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testQueryWork.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testInputTemplate.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/TesttpController.class.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/UserWorkModel.class.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/CoworkController.class.php",
-		"/Users/zhuwenqi/快盘/主题/Faxsun相关/佛学app/参考/weui-master/dist/example/index.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/CoworkJoin/inputUserCowork.html",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/CoworkJoinModel.class.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/CoworkModel.class.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/noJoinedCowork.html",
 		"/Applications/XAMPP/xamppfiles/htdocs/zhjg/Application/WeChatMenu.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/zhjg.sublime-project",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/WechatController.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testInputTemplate2.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/TesttpController.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testQueryWork.html",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/myOpenCoworkDetail.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testOutput.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testQueryHandle.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/UserWorkModel.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/zhjg.sublime-project",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Common/Conf/config.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/CoworkModel.class.php",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/myOpenCoworkList.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/BaseUserModel.class.php",
-		"/Applications/XAMPP/xamppfiles/htdocs/zhjg/Application/testmenu.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/CoworkJoin/inputUserCowork.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/noJoinedCowork.html",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/newCowork.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/joinedCowork.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testInputPage.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testInputTemplate.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Conf/config.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/CoworkController.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp-git/zhj-hui-jin-gang/zhjg/Application/zhjg.sublime-project",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/BaseUserModel.class.php",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/CoworkJoinController.class.php",
+		"/Users/zhuwenqi/快盘/主题/Faxsun相关/佛学app/参考/weui-master/dist/example/index.html",
+		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testOutput.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/zhjg/Application/testmenu.php",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Cowork/editCoworkTemplate.html",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/CoworkJoin/myJoinCoworkList.html",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Common/function.php",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/testmenu.php",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/UserMsgModel.class.php",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/Testtp/testInputPage.html",
-		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Controller/WechatController.class.php",
 		"/Users/zhuwenqi/快盘/主题/Faxsun相关/佛学app/参考/weui-master/src/example/index.html",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/Model/ConstTextModel.class.php",
 		"/Users/zhuwenqi/Dev/zhjg-tp/zhjg/Application/Home/View/index.html",
@@ -125,7 +127,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"ap-zhihuijingang",
+			"clearEmptyWork",
+			"queryWorkByDate",
 			"addJoin"
 		],
 		"highlight": true,
@@ -144,8 +147,35 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Home/Common/function.php",
+					"settings":
+					{
+						"buffer_size": 4460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1942,
+								1942
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1110.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

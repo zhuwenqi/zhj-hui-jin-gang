@@ -9,6 +9,9 @@ class BaseUserModel extends Model
     protected $trueTableName = 'baseuser';
     protected $tableName = 'baseuser';
 
+
+    
+
 //    public function index()
 //    {
 //        $sql = "SELECT * FROM ".C("DB_ORACLE_PREFIX")."F_3_TERMINAL";

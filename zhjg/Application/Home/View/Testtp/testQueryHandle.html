@@ -26,9 +26,15 @@
             <input type="hidden" name="openid" value={$openid} />
             <input type="hidden" name="nickname" value={$nickname} />
             <div class="weui_cell">
-                <div class="weui_cell_hd"><label class="weui_label">日期</label></div>
+                <div class="weui_cell_hd"><label class="weui_label">开始日期</label></div>
                 <div class="weui_cell_bd weui_cell_primary">
                     <input class="weui_input laydate-icon" onclick="laydate({festival: true})" type="text"  name="queryDate" value={$querydate}>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">截止日期</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input laydate-icon" onclick="laydate({festival: true})" type="text"  name="queryDateEnd" value={$querydateend}>
                 </div>
             </div>
 

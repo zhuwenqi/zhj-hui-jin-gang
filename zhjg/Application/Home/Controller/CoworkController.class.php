@@ -190,9 +190,6 @@ class CoworkController extends Controller {
         }
         
 
-
-        
-
     }
 
     public function addJoinCowork()

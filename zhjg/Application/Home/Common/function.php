@@ -130,6 +130,40 @@ function getOauthURL($baseURL){
 	return $newUrl;
 }
 
+
+function sendMail($to, $subject, $content,$attach) {
+    vendor('PHPMailer.class#smtp'); 
+    vendor('PHPMailer.class#phpmailer');    //注意这里的大小写哦，不然会出现找不到类，PHPMailer是文件夹名字，class#phpmailer就代表class.phpmailer.php文件名
+    $mail = new PHPMailer();
+    // 装配邮件服务器
+    if (C('MAIL_SMTP')) {
+        $mail->IsSMTP();
+    }
+    $mail->Host = C('MAIL_HOST');  //这里的参数解释见下面的配置信息注释
+    $mail->SMTPAuth = C('MAIL_SMTPAUTH');  
+    $mail->Username = C('MAIL_USERNAME');
+    $mail->Password = C('MAIL_PASSWORD');
+    $mail->SMTPSecure = C('MAIL_SECURE');
+    $mail->CharSet = C('MAIL_CHARSET');
+    // 装配邮件头信息
+    $mail->From = C('MAIL_USERNAME');
+    $mail->AddAddress($to);
+    $mail->FromName = C('MAIL_FROMNAME');
+    $mail->IsHTML(C('MAIL_ISHTML'));
+    $mail->Port = 25;
+    $mail->AddAttachment($attach); 
+    // 装配邮件正文信息
+    $mail->Subject = $subject;
+    $mail->Body = $content;
+    // 发送邮件
+    if (!$mail->Send()) {
+    	echo $mail->ErrorInfo;
+        return FALSE;
+    } else {
+        return TRUE;
+    }
+}
+
 /**
  * 获取当前系统时间戳
  * @author ryz <609873271@qq.com>

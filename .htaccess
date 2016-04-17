@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+#开启重写
+RewriteEngine on
+#匹配路径目录不存在时
+RewriteCond %{REQUEST_FILENAME} !-d
+#匹配路径文件不存在时
+RewriteCond %{REQUEST_FILENAME} !-f
+#路径重写规则
+RewriteRule ^(.*)$ index.php?s=/$1 [QSA,PT,L]
+</IfModule>

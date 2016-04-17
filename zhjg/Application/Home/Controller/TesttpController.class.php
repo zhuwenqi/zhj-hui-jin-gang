@@ -156,6 +156,7 @@ class TesttpController extends Controller {
         $this->assign('nickname',$baseuser["nickname"]);
         $this->assign('openid',$oid);
         $this->assign('querydate',date('Y-m-d'));
+        $this->assign('querydateend',date('Y-m-d'));
         $this->display();
     }
 
@@ -163,13 +164,19 @@ class TesttpController extends Controller {
         $iOid=$_POST['openid'];
         $iNickname=$_POST['nickname'];
         $iQueryDate=$_POST['queryDate'];
+        $iQueryDateEnd=$_POST['queryDateEnd'];
 
-        $queryWork = $this->_userWorkModel->queryWorkByDate($iOid,$iQueryDate);
+        //$queryWork = $this->_userWorkModel->queryWorkByDate($iOid,$iQueryDate);
+        $queryWork = $this->_userWorkModel->querySumWorkByDate($iOid,$iQueryDate,$iQueryDateEnd);
+
         $this->assign('res',$queryWork);
+
+        //var_dump($queryWork);
 
         $this->assign('nickname',$iNickname);
         $this->assign('openid',$iOid);
         $this->assign('querydate',$iQueryDate);
+        $this->assign('querydateend',$iQueryDateEnd);
         $this->display();
     }
 
@@ -240,6 +247,82 @@ class TesttpController extends Controller {
         */
     }
 
+
+
+public function testInputTemplate2(){
+        //$oid = I('get.OpenID');
+
+        $code=$_GET["code"];
+        $oid=getOidByOauth($code);
+
+        $baseuser = $this->_baseUserModel->getBaseUser($oid);
+
+        $queryWork = $this->_userWorkModel->queryWorkTemplate($oid);
+        $this->assign('res_template',$queryWork);
+
+        $queryWork2 = $this->_userWorkModel->queryTodayWork($oid);
+        $this->assign('res_today',$queryWork2);
+
+        $this->assign('nickname',$baseuser["nickname"]);
+        $this->assign('openid',$oid);
+
+        $this->assign('inputDate',date('Y-m-d'));
+        //error_log('testInputTemplate');
+        $this->display();
+    }
+
+    public function testInputTemplateHandle2(){
+        //$iWorkName = $_POST['inputWorkName'];
+        //$iWorkNumber = $_POST['inputWorkNumber'];
+        $iOid=$_POST['openid'];
+        $iNickname=$_POST['nickname'];
+        $iInputDate=$_POST['inputDate'];
+        $inputMode1=$_POST['radio1'];
+        //var_dump($inputMode1);
+        //error_log($inputMode1);
+
+        $queryWork = $this->_userWorkModel->queryWorkTemplate($iOid);
+        foreach ($queryWork as $record) {
+            //$result = $result.$record["workname"].':'.$record["readnumber"]."\r";//必须小写
+            //echo $record["workname"];
+            $iReadNumber=$_POST[$record["workname"]];
+
+            $this->_userWorkModel->addWork($iOid,$record["workname"],$iReadNumber,$inputMode1,$iInputDate);
+
+        }
+
+        $queryWork = $this->_userWorkModel->queryWorkTemplate($iOid);
+        $this->assign('res_template',$queryWork);
+
+        $queryWork2 = $this->_userWorkModel->queryWorkByDate($iOid,$iInputDate);
+        $this->assign('res_today',$queryWork2);
+
+        $this->assign('nickname',$iNickname);
+        $this->assign('openid',$iOid);
+        $this->assign('inputDate',$iInputDate);
+        error_log('testInputTemplateHandle');
+        $this->display('Testtp/testInputTemplate2');
+        //$this->assign('openid',$iOid);
+        //$this->assign('nickname',$iNickname);
+        //$this->assign('res',$queryWork);
+        //$this->redirect('testInputTemplate','OpenID='.$iOid,1,'页面跳转中...');
+        //redirect('testInputPage');
+        //redirect('testInputPage', 1, '页面跳转中...');
+        /*
+        $outPutStr = $iWorkName."_".$iWorkNumber."_".$iOid;
+        $this->assign('outPutStr',$outPutStr);
+        $this->display('testOutput');
+        */
+    }
+
+
+
+
+
+
+
+
+
     public function testOauth(){
         $code=$_GET["code"];
         $oid=getOidByOauth($code);
@@ -249,6 +332,44 @@ class TesttpController extends Controller {
         $this->assign('outPutStr',$code.'----'.$oid);
         $this->display('testOutput');
 
+    }
+
+    public function testFile(){
+
+        $oid = 'oMWyDwwtqVRU33zBB492IOz_fBkI';
+        $baseuser = $this->_baseUserModel->getBaseUser($oid);
+
+        $this->_userWorkModel->outputWorkToFileTest($baseuser["nickname"],$oid,'2016-03-05','2016-04-12');
+        
+
+
+        $this->assign('outPutStr','Success!!');
+        $this->display('testOutput');
+    }
+
+    public function testEmail(){
+        if(sendMail('wenqi_zhu@163.com','你好!邮件标题','这是一篇测试邮件正文！')){
+            echo '发送成功！';
+        }
+        else{
+            echo '发送失败！';
+        }
+        $this->assign('outPutStr','Success!!');
+        $this->display('testOutput');
+    }
+
+    public function testFileEmail(){
+
+        $oid = 'oMWyDwwtqVRU33zBB492IOz_fBkI';
+        $mailAddr='wenqi_zhu@163.com';
+        $baseuser = $this->_baseUserModel->getBaseUser($oid);
+
+        $this->_userWorkModel->outputWorkToMail($baseuser["nickname"],$oid,'2016-03-05','2016-04-12',$mailAddr);
+        
+
+
+        $this->assign('outPutStr','Success!!');
+        $this->display('testOutput');
     }
 
 }
