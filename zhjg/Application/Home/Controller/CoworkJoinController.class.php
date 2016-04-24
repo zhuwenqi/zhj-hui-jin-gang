@@ -45,25 +45,29 @@ class CoworkJoinController extends Controller {
         $code=$_GET["code"];
         $oid=getOidByOauth($code);
         //$oid="oMWyDwwtqVRU33zBB492IOz_fBkI";
-        
-        $coworkJoinList=$this->_coworkJoinModel->getCoworkJoinByOpenId($oid);
 
-        $urlList=array();
 
-        foreach ($coworkJoinList as $value) {//直接用SQL解决
-        	$cowork =$this->_coworkModel->getCoworkByCoid($value["coid"]);
-            $urlList[$value["coid"]]=$cowork["mydetailurl"];
+        $baseuser = $this->_baseUserModel->getBaseUser($oid);
+
+
+        if($baseuser){
+            $coworkJoinList=$this->_coworkJoinModel->getCoworkJoinByOpenId($oid);
+
+            $urlList=array();
+            foreach ($coworkJoinList as $value) {//直接用SQL解决
+                $cowork =$this->_coworkModel->getCoworkByCoid($value["coid"]);
+                $urlList[$value["coid"]]=$cowork["mydetailurl"];
+            }
+            $this->assign('openid',$oid);
+            $this->assign('res',$coworkJoinList);
+            $this->assign('res2',$urlList);
+            //var_dump($urlList);
+            $this->display();
+        }else{
+            redirect(C('WECHAT_SUBSCRIBE_URL'));
         }
+        
 
-
-        $this->assign('openid',$oid);
-        $this->assign('res',$coworkJoinList);
-        $this->assign('res2',$urlList);
-        //var_dump($urlList);
-        $this->display();
-
-        //$this->assign('outPutStr',$oid);
-        //$this->display('testOutput');
 
 
     }

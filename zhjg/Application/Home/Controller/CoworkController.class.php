@@ -47,12 +47,15 @@ class CoworkController extends Controller {
         //$oid="oMWyDwwtqVRU33zBB492IOz_fBkI";
         $baseuser = $this->_baseUserModel->getBaseUser($oid);
 
-        $this->assign('duedate',date('Y-m-d'));
+        if($baseuser){
+            $this->assign('duedate',date('Y-m-d'));
+            $this->assign('nickname',$baseuser["nickname"]);
+            $this->assign('openid',$oid);
+            $this->display();
+        }else{
+            redirect(C('WECHAT_SUBSCRIBE_URL'));
+        }
 
-
-        $this->assign('nickname',$baseuser["nickname"]);
-        $this->assign('openid',$oid);
-        $this->display();
     }
 
     public function addCowork()
@@ -115,10 +118,17 @@ class CoworkController extends Controller {
         $oid=getOidByOauth($code);
         //$oid="oMWyDwwtqVRU33zBB492IOz_fBkI";
 
-        $coworkList=$this->_coworkModel->getCoworkByOpenerID($oid);
-        $this->assign('openid',$oid);
-        $this->assign('res',$coworkList);
-        $this->display();
+        $baseuser = $this->_baseUserModel->getBaseUser($oid);
+
+
+        if($baseuser){
+            $coworkList=$this->_coworkModel->getCoworkByOpenerID($oid);
+            $this->assign('openid',$oid);
+            $this->assign('res',$coworkList);
+            $this->display();
+        }else{
+            redirect(C('WECHAT_SUBSCRIBE_URL'));
+        }
 
 
     }

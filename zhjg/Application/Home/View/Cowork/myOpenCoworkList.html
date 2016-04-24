@@ -51,7 +51,10 @@ function showToast(){
         //var opened1 = window.open('about:blank', '_self');
         //opened1.opener = null;
         //opened1.close();
+        /*
         document.addEventListener('WeixinJSBridgeReady', function(){ WeixinJSBridge.call('closeWindow'); }, false);
+        */
+        window.location="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5295795b253393ea&redirect_uri=http%3A%2F%2Fzhihuijingang.com%2Fzhjg%2Findex.php%2FHome%2FCowork%2FmyOpenCoworkList&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
     }else{
 
         var useragent = navigator.userAgent;

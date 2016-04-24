@@ -8,3 +8,5 @@ zhjg/Application/WeChatMenu.php
 *.sublime-workspace
 
 zhjg/Application/zhjg-git.sublime-workspace
+
+*.sublime-workspace
