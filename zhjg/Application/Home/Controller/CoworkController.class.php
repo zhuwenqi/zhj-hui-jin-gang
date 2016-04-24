@@ -220,28 +220,34 @@ class CoworkController extends Controller {
         if($oid==$cowork["openerid"])//判断打开者与发起人是否一致，如果不一致的话就跳转
         {
             $this->assign('openid',$oid);
-        }
-        $workList = $this->_coworkModel->getTemplate($coid);
 
-        $comp=array();
-        $all_comp=$this->_coworkModel->getAllCompletedByCoid($coid);
 
-        foreach ($workList as $value) {//直接用SQL解决
-            foreach($all_comp as $value2)
-            {
-                if($value["workname"]==$value2["workname"]){
-                    $comp[$value["id"]]=$value2["number"];
+            $workList = $this->_coworkModel->getTemplate($coid);
+
+            $comp=array();
+            $all_comp=$this->_coworkModel->getAllCompletedByCoid($coid);
+
+            foreach ($workList as $value) {//直接用SQL解决
+                foreach($all_comp as $value2)
+                {
+                    if($value["workname"]==$value2["workname"]){
+                        $comp[$value["id"]]=$value2["number"];
+                    }
                 }
             }
-        }
-        //var_dump($comp);
-        $this->assign('coworkName',$cowork["coname"]);
-        $this->assign('openerName',$cowork["openername"]);
-        $this->assign('coid',$coid);
-        $this->assign('res',$workList);
+            //var_dump($comp);
+            $this->assign('coworkName',$cowork["coname"]);
+            $this->assign('openerName',$cowork["openername"]);
+            $this->assign('coid',$coid);
+            $this->assign('res',$workList);
 
-        $this->assign('res2',$comp);
-        $this->display();
+            $this->assign('res2',$comp);
+            $this->display();
+
+        }else{
+            redirect($cowork['mydetailurl']);
+        }
+
 
 
     }
