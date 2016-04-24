@@ -4,3 +4,7 @@ zhjg/Application/Home/Conf/config.php
 zhjg/Application/WeChatMenu.php
 
 *.log
+
+*.sublime-workspace
+
+zhjg/Application/zhjg-git.sublime-workspace

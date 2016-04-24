@@ -26,16 +26,16 @@
 
         
         <form action="{:U('Testtp/testInputHandle')}" id="addWorkForm" method="post">
-        <div class="weui_cells_title">录入功课</div>
+        <div class="weui_cells_title">请录入功课</div>
         <div class="weui_cells weui_cells_form">
             <input type="hidden" name="openid" value={$openid} />
             <input type="hidden" name="nickname" value={$nickname} />
 
-        <div class="weui_cells_title">输入模式</div>
+        <div class="weui_cells_title">录入模式</div>
         <div class="weui_cells weui_cells_radio">
             <label class="weui_cell weui_check_label" for="x11">
                 <div class="weui_cell_bd weui_cell_primary">
-                    <p>逐次累加</p>
+                    <p>我要添加</p>
                 </div>
                 <div class="weui_cell_ft">
                     <input type="radio" class="weui_check" name="radio1" id="x11" value="m1">
@@ -45,7 +45,7 @@
             <label class="weui_cell weui_check_label" for="x12">
 
                 <div class="weui_cell_bd weui_cell_primary">
-                    <p>总数更新</p>
+                    <p>我要更新</p>
                 </div>
                 <div class="weui_cell_ft">
                     <input type="radio" name="radio1" class="weui_check" id="x12" value="m2" checked="checked">
@@ -63,26 +63,26 @@
 
 
             <div class="weui_cell">
-                <div class="weui_cell_hd"><label class="weui_label">咒名</label></div>
+                <div class="weui_cell_hd"><label class="weui_label">功课</label></div>
                 <div class="weui_cell_bd weui_cell_primary weui_cell_warn">
-                    <input class="weui_input" type="text"  name="inputWorkName" placeholder="请输入咒名"/>
+                    <input class="weui_input" type="text"  name="inputWorkName" placeholder="请输入功课"/>
                 </div>
             </div>
             <div class="weui_cell">
-                                <div class="weui_cell_hd"><label class="weui_label">次数</label></div>
+                                <div class="weui_cell_hd"><label class="weui_label">数量</label></div>
                 <div class="weui_cell_bd weui_cell_primary weui_cell_warn">
                     <input class="weui_input" type="number"  name="inputWorkNumber" pattern="^-?\d+$" placeholder="请输入次数"/>
                 </div>
             </div>
         </div>
         <div class="weui_btn_area">
-            <a type="submit" class="weui_btn weui_btn_primary" href="javascript:showToast()" value="添加" id="submit_button">添加功课</a>
+            <a type="submit" class="weui_btn weui_btn_primary" href="javascript:showToast()" value="添加" id="submit_button">录入功课</a>
         </div>
         <div id="toast" style="display: none;">
         <div class="weui_mask_transparent"></div>
         <div class="weui_toast">
             <i class="weui_icon_toast"></i>
-            <p class="weui_toast_content">完成添加</p>
+            <p class="weui_toast_content">录入成功，随喜功德！</p>
         </div>
     </div>
         </form>

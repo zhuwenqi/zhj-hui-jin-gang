@@ -138,7 +138,7 @@ class WechatController extends Controller{
         //$appid = "wx5295795b253393ea";
         //$appsecret = "3d6208234f0f8b763b4898ddb161781c";
         $appsecret=C('WECHAT_APPSECRET');
-        $baseuri_test="http://ap-zhihuijingang.aliapp.com/zhjg/index.php/Home/Testtp/testOauth";
+        $baseuri_test="http://zhihuijingang.com/zhjg/index.php/Home/Testtp/testOauth";
         $enuri_test=urlencode($baseuri_test);
         $testuri="https://open.weixin.qq.com/connect/oauth2/authorize?appid={$appid}&redirect_uri={$enuri_test}&response_type=code&scope=snsapi_base&state=1#wechat_redirect";
 
@@ -159,6 +159,7 @@ class WechatController extends Controller{
                     case Wechat::MSG_EVENT_CLICK:
                         //菜单点击
                         switch ($data['EventKey']) {
+                            /*
                             case 'work_input':
                                 //$wechat->replyText('录入今日功课');
                                 $wechat->replyNewsOnce(
@@ -199,6 +200,7 @@ class WechatController extends Controller{
                             case 'testoauth':
                                 $wechat->replyText($testuri);
                                 break;
+                                */
                             case 'aboutus':
                                 //$wechat->replyText('关于智慧金刚');
                             /*
